@@ -1,0 +1,7 @@
+<ul id="myTab" class="nav nav-tabs nav-stacked">
+    <li class="active"><a href="#default" data-toggle="tab">ALL</a></li>
+    <li><a href="#foo" data-toggle="tab">FOO</a></li>
+    <li><a href="#bar" data-toggle="tab">BAR</a></li>
+    <li><a href="#baz" data-toggle="tab">BAZ</a></li>
+    <li><a href="#qux" data-toggle="tab">QUX</a></li>
+</ul>

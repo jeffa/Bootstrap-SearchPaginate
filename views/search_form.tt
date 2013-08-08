@@ -1,0 +1,6 @@
+<form class="navbar-search pull-right">
+    <div class="input-append">
+        <input id="appendedInputButton" type="text">
+        <button class="btn" type="button">Go!</button>
+    </div>
+</form>

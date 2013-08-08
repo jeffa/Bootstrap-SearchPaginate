@@ -33,7 +33,7 @@ get '/results' => sub {
         per     => $per,
         curr    => $curr,
         pager   => $pager,        
-    };
+    }, { layout => undef };
 };
 
 true;
