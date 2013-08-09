@@ -10,10 +10,19 @@ get '/' => sub {
     template index => \%vars;
 };
 
-get '/results' => sub {
 
-    my $per  = param( 'per' ) || 10;
-    my $curr = param( 'curr' ) || 1;
+get '/*' => sub {
+    my ($page) = splat;
+    my %results = get_results( params );
+
+    delete $_->{$page} for @{ $results{results} };
+
+    template "pages/$page.tt" => { %results, params, }, { layout => undef };
+};
+
+
+sub get_results {
+    my %params = @_;
 
     my @results = ( 
         map {{ foo => $_, bar => $_, baz => $_, qux => $_ }} 
@@ -23,17 +32,12 @@ get '/results' => sub {
 
     my $pager = Data::SpreadPagination->new({
         totalEntries      => scalar @results,
-        entriesPerPage    => $per,
-        currentPage       => $curr,
+        entriesPerPage    => $params{per}  || 10,
+        currentPage       => $params{curr} ||  1,
         maxPages          => 6,
     });
 
-    template results => {
-        results => \@results,
-        per     => $per,
-        curr    => $curr,
-        pager   => $pager,        
-    }, { layout => undef };
-};
+    return ( %params, results => \@results, pager => $pager );
+}
 
 true;

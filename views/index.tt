@@ -1,9 +1,9 @@
 <h1>Bootstrap Search Pagination</h1>
 
 <div id="myTabContent" class="tab-content">
-    <div class="tab-pane active" id="default">[% INCLUDE pages/default.tt %]</div>
-    <div class="tab-pane" id="foo">[% INCLUDE pages/foo.tt %]</div>
-    <div class="tab-pane" id="bar">[% INCLUDE pages/bar.tt %]</div>
-    <div class="tab-pane" id="baz">[% INCLUDE pages/baz.tt %]</div>
-    <div class="tab-pane" id="qux">[% INCLUDE pages/qux.tt %]</div>
+    <div class="tab-pane active" id="default"></div>
+    <div class="tab-pane" id="foo"></div>
+    <div class="tab-pane" id="bar"></div>
+    <div class="tab-pane" id="baz"></div>
+    <div class="tab-pane" id="qux"></div>
 </div>

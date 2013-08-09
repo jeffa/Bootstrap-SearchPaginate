@@ -1,15 +1,28 @@
-function fetch_results( curr, per ) {
+function fetch_results() {
 
-    if (!per) per = 10;
-    if (!curr) curr = 1;
+    per = document.myForm.per.value;
+    curr = document.myForm.curr.value;
+    page = document.myForm.page.value;
 
-    var url = '/results'
+    var url = '/' + page
         + '?per=' + per
         + '&curr=' + curr
     ;
 
-    _ajaxGET( url, '#content' );
+    _ajaxGET( url, '#' + page );
 }
+
+
+function set_controls( curr, per ) {
+    document.myForm.per.value = per;
+    document.myForm.curr.value = curr;
+}
+
+
+function set_page( page ) {
+    document.myForm.page.value = page;
+}
+
 
 function _ajaxGET( url, id, err ) {
 

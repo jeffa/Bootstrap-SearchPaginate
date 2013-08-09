@@ -1,17 +1,17 @@
 <div class="pagination">
     <ul>
         <li class="[% pager.previous_page ? '' : 'disabled' %]">
-            <a href="javascript:fetch_results( [% pager.previous_page %], [% per %] )">&laquo;</a>
+            <a href="javascript:set_controls( [% pager.previous_page %], [% per %] ); fetch_results();">&laquo;</a>
         </li>
         [% FOREACH number IN pager.pages_in_spread %]
             [% IF number %]
             <li class="[% pager.current_page == number ? 'active' : '' %]">
-                <a href="javascript:fetch_results( [% number %], [% per %] )">[% number %]</a>
+                <a href="javascript:set_controls( [% number %], [% per %] ); fetch_results();">[% number %]</a>
             </li>
             [% END %]
         [% END %]
         <li class="[% pager.next_page ? '' : 'disabled' %]">
-            <a href="javascript:fetch_results( [% pager.next_page %], [% per %] )">&raquo;</a>
+            <a href="javascript:set_controls( [% pager.next_page %], [% per %] ); fetch_results();">&raquo;</a>
         </li>
     </ul>
 </div>

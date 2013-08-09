@@ -1,1 +1,24 @@
-<h1>Foo</h1>
+<h2>Foo Results</h2>
+
+[% INCLUDE pagination.tt %]
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Bar</th>
+            <th>Baz</th>
+            <th>Qux</th>
+        </tr>
+    </thead>
+    <tbody>
+        [% FOREACH row IN results.slice( pager.first - 1, pager.last - 1 ) %]
+        <tr>
+            <td>[% row.bar %]</td>
+            <td>[% row.baz %]</td>
+            <td>[% row.qux %]</td>
+        </tr>
+        [% END %]
+    </tbody>
+</table>
+
+[% INCLUDE pagination.tt %]
