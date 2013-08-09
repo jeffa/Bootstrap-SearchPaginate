@@ -1,26 +1,29 @@
 function fetch_results() {
 
-    per = document.myForm.per.value;
-    curr = document.myForm.curr.value;
-    page = document.myForm.page.value;
+    per  = document.search.per.value;
+    curr = document.search.curr.value;
+    page = document.search.page.value;
 
-    var url = '/' + page
-        + '?per=' + per
+    var url = '/'  + page
+        + '?per='  + per
         + '&curr=' + curr
     ;
+
+    $('#myTab a[href="#' + page + '"]').tab('show');
 
     _ajaxGET( url, '#' + page );
 }
 
 
 function set_controls( curr, per ) {
-    document.myForm.per.value = per;
-    document.myForm.curr.value = curr;
+    document.search.per.value  = per;
+    document.search.curr.value = curr;
 }
 
 
 function set_page( page ) {
-    document.myForm.page.value = page;
+    document.search.page.value = page;
+    document.search.curr.value = 1;
 }
 
 

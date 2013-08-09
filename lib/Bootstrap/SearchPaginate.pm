@@ -27,7 +27,7 @@ sub get_results {
     my @results = ( 
         map {{ foo => $_, bar => $_, baz => $_, qux => $_ }} 
         map { sprintf '%04d', $_ }
-        1 .. 9999
+        10 .. 9999
     );
 
     my $pager = Data::SpreadPagination->new({

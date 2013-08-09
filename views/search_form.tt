@@ -1,10 +1,16 @@
-<form name="myForm" class="navbar-search pull-right">
+<form id="search" name="search" class="navbar-search">
+
+    <button class="btn btn-large btn-primary disabled" type="button">
+        Bootstrap Search Pagination
+    </button>
+
     <div class="input-append">
         <input id="appendedInputButton" type="text">
-        <button class="btn" type="button">Go!</button>
+        <button class="btn btn-primary" type="button">Go!</button>
     </div>
 
     <input name="page" type="hidden" value="default" />
     <input name="per"  type="hidden" value="10" />
     <input name="curr" type="hidden" value="1" />
+
 </form>

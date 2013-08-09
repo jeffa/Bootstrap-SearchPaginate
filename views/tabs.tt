@@ -1,7 +1,22 @@
 <ul id="myTab" class="nav nav-pills nav-stacked">
-    <li class="active"><a href="#default" data-toggle="tab">ALL</a></li>
-    <li><a href="#foo" data-toggle="tab">FOO</a></li>
-    <li><a href="#bar" data-toggle="tab">BAR</a></li>
-    <li><a href="#baz" data-toggle="tab">BAZ</a></li>
-    <li><a href="#qux" data-toggle="tab">QUX</a></li>
+    <li class="active">
+        <a href="#default" style="display: none"></a>
+        <a href="javascript: set_page('default'); fetch_results();">ALL</a>
+    </li>
+    <li>
+        <a href="#foo" style="display: none"></a>
+        <a href="javascript: set_page('foo'); fetch_results();">FOO</a>
+    </li>
+    <li>
+        <a href="#bar" style="display: none"></a>
+        <a href="javascript: set_page('bar'); fetch_results();">BAR</a>
+    </li>
+    <li>
+        <a href="#baz" style="display: none"></a>
+        <a href="javascript: set_page('baz'); fetch_results();">BAZ</a>
+    </li>
+    <li>
+        <a href="#qux" style="display: none"></a>
+        <a href="javascript: set_page('qux'); fetch_results();">QUX</a>
+    </li>
 </ul>
