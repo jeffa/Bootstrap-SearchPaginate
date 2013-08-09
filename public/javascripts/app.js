@@ -1,3 +1,17 @@
+function load() {
+    fetch_results();
+
+    // enter key "submits" the form
+    $(document).keydown(function(e) {
+        switch(e.which) {
+            case 13:
+            fetch_results();
+            default: return;
+        }
+        e.preventDefault();
+    });
+}
+
 function fetch_results() {
 
     var params = $.param([
