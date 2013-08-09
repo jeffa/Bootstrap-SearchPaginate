@@ -1,18 +1,16 @@
 function fetch_results() {
 
-    per   = document.search.per.value;
-    curr  = document.search.curr.value;
-    page  = document.search.page.value;
-    query = document.search.query.value;
+    var params = $.param([
+        {name: "per",   value: document.search.per.value},
+        {name: "curr",  value: document.search.curr.value},
+        {name: "query", value: document.search.query.value},
+        {name: "max",   value: document.search.max.value}
+    ]);
 
-    var url = '/'   + page
-        + '?per='   + per
-        + '&curr='  + curr
-        + '&query=' + query
-    ;
+    var page = document.search.page.value;
+    var url  = '/' + page + '?' + params;
 
     $('#myTab a[href="#' + page + '"]').tab('show');
-
     _ajaxGET( url, '#' + page );
 }
 

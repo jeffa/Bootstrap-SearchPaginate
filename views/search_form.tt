@@ -1,16 +1,14 @@
 <form id="search" name="search" class="navbar-search">
 
-    <button class="btn btn-large btn-primary disabled" type="button">
-        Bootstrap Search Pagination
-    </button>
-
     <div class="input-append">
+        <button class="btn btn-large btn-primary disabled" type="button">Bootstrap Search Pagination</button>
         <input name="query" id="appendedInputButton" type="text">
         <button class="btn btn-primary" type="button" onclick="javascript: fetch_results()">Go!</button>
     </div>
 
     <input name="page" type="hidden" value="default" />
-    <input name="per"  type="hidden" value="10" />
-    <input name="curr" type="hidden" value="1" />
+    <input name="curr" type="hidden" />
+    <input name="per"  type="hidden" />
+    <input name="max"  type="hidden" />
 
 </form>

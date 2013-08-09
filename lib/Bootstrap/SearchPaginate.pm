@@ -3,6 +3,8 @@ use Dancer ':syntax';
 use Data::SpreadPagination;
 
 our $VERSION = '0.2';
+our $PER_PAGE = 10;
+our $MAX_PAGE = 10;
 
 get '/' => sub {
     my %vars = ();
@@ -17,7 +19,7 @@ get '/*' => sub {
 
     delete $_->{$page} for @{ $results{results} };
 
-    template "pages/$page.tt" => { %results, params, }, { layout => undef };
+    template "pages/$page.tt" => \%results, { layout => undef };
 };
 
 
@@ -37,9 +39,9 @@ sub get_results {
 
     my $pager = Data::SpreadPagination->new({
         totalEntries      => scalar @results,
-        entriesPerPage    => $params{per}  || 10,
-        currentPage       => $params{curr} ||  1,
-        maxPages          => 6,
+        currentPage       => $params{curr} ||= 1,
+        entriesPerPage    => $params{per}  ||= $PER_PAGE,
+        maxPages          => $params{max}  ||= $MAX_PAGE,
     });
 
     return ( %params, results => \@results, pager => $pager );
