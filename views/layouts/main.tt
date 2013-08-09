@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row-fluid">
                 <div class="span3">[% INCLUDE tabs.tt %]</div>
-                <div class="span9">[% INCLUDE content.tt %]</div>
+                <div class="span9">[% content %]</div>
             </div>
         </div>
 
