@@ -5,8 +5,8 @@
     </button>
 
     <div class="input-append">
-        <input id="appendedInputButton" type="text">
-        <button class="btn btn-primary" type="button">Go!</button>
+        <input name="query" id="appendedInputButton" type="text">
+        <button class="btn btn-primary" type="button" onclick="javascript: fetch_results()">Go!</button>
     </div>
 
     <input name="page" type="hidden" value="default" />

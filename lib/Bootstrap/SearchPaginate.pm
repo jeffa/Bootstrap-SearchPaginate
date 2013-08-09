@@ -24,10 +24,15 @@ get '/*' => sub {
 sub get_results {
     my %params = @_;
 
+    my @data = (10 .. 9999);
+    if ($params{query}) {
+        @data = grep /$params{query}/, @data;
+    }
+
     my @results = ( 
         map {{ foo => $_, bar => $_, baz => $_, qux => $_ }} 
         map { sprintf '%04d', $_ }
-        10 .. 9999
+        @data
     );
 
     my $pager = Data::SpreadPagination->new({
